@@ -63,10 +63,21 @@ android {
             keyPassword = "android"
         }
         create("release") {
-            storeFile = file("keystore/release.keystore")
-            storePassword = System.getenv("STORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
+            val keystoreFile = file("keystore/release.keystore")
+            val storePass = System.getenv("STORE_PASSWORD")
+            val keyAliasEnv = System.getenv("KEY_ALIAS")
+            val keyPass = System.getenv("KEY_PASSWORD")
+            
+            println("🔐 Signing Config Debug:")
+            println("  Keystore exists: ${keystoreFile.exists()}")
+            println("  Store password set: ${storePass != null}")
+            println("  Key alias set: ${keyAliasEnv != null}")
+            println("  Key password set: ${keyPass != null}")
+            
+            storeFile = keystoreFile
+            storePassword = storePass
+            keyAlias = keyAliasEnv
+            keyPassword = keyPass
         }
         getByName("debug") {
             keyAlias = "androiddebugkey"
@@ -84,6 +95,21 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            
+            val storePassword = System.getenv("STORE_PASSWORD")
+            val keyAlias = System.getenv("KEY_ALIAS")
+            val keyPassword = System.getenv("KEY_PASSWORD")
+            
+            if (storePassword != null && keyAlias != null && keyPassword != null) {
+                println("✅ Using release signing configuration")
+                signingConfig = signingConfigs.getByName("release")
+            } else {
+                println("⚠️ No signing environment variables found - APK will be unsigned")
+                println("  STORE_PASSWORD: ${storePassword != null}")
+                println("  KEY_ALIAS: ${keyAlias != null}")
+                println("  KEY_PASSWORD: ${keyPassword != null}")
+                signingConfig = null
+            }
         }
         debug {
             applicationIdSuffix = ".debug"
