@@ -1,4 +1,8 @@
 # Elythra
+
+[![Android Build](https://github.com/fncshaolin/elythra/actions/workflows/android_build.yml/badge.svg)](https://github.com/fncshaolin/elythra/actions/workflows/android_build.yml)
+[![Version](https://img.shields.io/badge/version-0.5-blue.svg)](https://github.com/fncshaolin/elythra/releases)
+
 A cross platform music streaming app with hybrid architecture:
 - **Android**: Native Android app (Kotlin/Jetpack Compose) for superior performance
 - **Windows/Linux**: Flutter app for desktop platforms
@@ -27,7 +31,13 @@ A cross platform music streaming app with hybrid architecture:
 
 
 # Download
-Download the latest release from [GitHub Releases](https://github.com/fncshaolin/elythra/releases/latest) 
+
+## Android v0.5 (Current Release)
+🚀 **Native Android App** - Download the latest Android APK from [GitHub Releases](https://github.com/fncshaolin/elythra/releases/latest)
+
+## Desktop (Coming Soon)
+- **Windows**: Flutter app (v1.0.0 planned)
+- **Linux**: Flutter app (v1.0.0 planned) 
 
 # Translation
 Translation support coming soon.
