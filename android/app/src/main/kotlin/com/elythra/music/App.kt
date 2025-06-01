@@ -15,9 +15,9 @@ import com.elythra.music.extensions.*
 import com.elythra.music.utils.dataStore
 import com.elythra.music.utils.get
 import com.elythra.music.utils.reportException
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.YouTubeLocale
-import com.metrolist.kugou.KuGou
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.YouTubeLocale
+import com.elythra.kugou.KuGou
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers

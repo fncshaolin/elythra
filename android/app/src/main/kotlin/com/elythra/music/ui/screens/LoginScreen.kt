@@ -32,7 +32,7 @@ import com.elythra.music.ui.component.IconButton
 import com.elythra.music.ui.utils.backToMain
 import com.elythra.music.utils.rememberPreference
 import com.elythra.music.utils.reportException
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

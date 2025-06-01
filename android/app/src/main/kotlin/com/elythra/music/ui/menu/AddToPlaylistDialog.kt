@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import com.metrolist.innertube.utils.parseCookieString
+import com.elythra.innertube.utils.parseCookieString
 import com.elythra.music.LocalDatabase
 import com.elythra.music.R
 import com.elythra.music.constants.InnerTubeCookieKey
@@ -33,7 +33,7 @@ import com.elythra.music.ui.component.ListDialog
 import com.elythra.music.ui.component.ListItem
 import com.elythra.music.ui.component.PlaylistListItem
 import com.elythra.music.utils.rememberPreference
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

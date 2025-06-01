@@ -52,9 +52,9 @@ import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.MainActivity
 import com.elythra.music.R
 import com.elythra.music.constants.AudioNormalizationKey

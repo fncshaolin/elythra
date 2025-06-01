@@ -7,7 +7,7 @@ import com.elythra.music.constants.InnerTubeCookieKey
 import com.elythra.music.constants.YtmSyncKey
 import com.elythra.music.utils.dataStore
 import com.elythra.music.utils.get
-import com.metrolist.innertube.utils.parseCookieString
+import com.elythra.innertube.utils.parseCookieString
 import kotlinx.coroutines.runBlocking
 
 fun Context.isSyncEnabled(): Boolean {

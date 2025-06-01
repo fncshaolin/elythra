@@ -1,8 +1,8 @@
 package com.elythra.music.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.db.entities.AlbumWithSongs
 import com.elythra.music.extensions.toMediaItem
 import com.elythra.music.models.MediaMetadata

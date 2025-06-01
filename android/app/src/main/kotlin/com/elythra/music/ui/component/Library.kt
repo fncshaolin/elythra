@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.models.PlaylistItem
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.R
 import com.elythra.music.db.entities.Album
 import com.elythra.music.db.entities.Artist

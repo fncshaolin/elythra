@@ -3,7 +3,7 @@ package com.elythra.music.extensions
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
-import com.metrolist.innertube.models.SongItem
+import com.elythra.innertube.models.SongItem
 import com.elythra.music.db.entities.Song
 import com.elythra.music.models.MediaMetadata
 import com.elythra.music.models.toMediaMetadata

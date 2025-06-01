@@ -33,7 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

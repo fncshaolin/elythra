@@ -49,8 +49,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.media3.common.util.UnstableApi
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.MediaInfo
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.MediaInfo
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.metrolist.innertube.models.*
+import com.elythra.innertube.models.*
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.*
+import com.elythra.innertube.models.*
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

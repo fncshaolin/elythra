@@ -3,7 +3,7 @@ package com.elythra.music.db.entities
 import androidx.compose.runtime.Immutable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel

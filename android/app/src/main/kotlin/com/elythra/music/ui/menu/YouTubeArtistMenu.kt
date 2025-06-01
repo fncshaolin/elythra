@@ -23,7 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.metrolist.innertube.models.ArtistItem
+import com.elythra.innertube.models.ArtistItem
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

@@ -2,7 +2,7 @@ package com.elythra.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import com.elythra.music.constants.statToPeriod
 import com.elythra.music.db.MusicDatabase
 import com.elythra.music.ui.screens.OptionStats

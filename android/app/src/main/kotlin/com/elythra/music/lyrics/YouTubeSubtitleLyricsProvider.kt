@@ -1,7 +1,7 @@
 package com.elythra.music.lyrics
 
 import android.content.Context
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 
 object YouTubeSubtitleLyricsProvider : LyricsProvider {
     override val name = "YouTube Subtitle"

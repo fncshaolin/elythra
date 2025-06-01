@@ -91,10 +91,10 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.pages.PlaylistPage
-import com.metrolist.innertube.utils.completed
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.pages.PlaylistPage
+import com.elythra.innertube.utils.completed
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.elythra.music.LocalDatabase

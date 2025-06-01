@@ -48,8 +48,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.WatchEndpoint
-import com.metrolist.innertube.utils.parseCookieString
+import com.elythra.innertube.models.WatchEndpoint
+import com.elythra.innertube.utils.parseCookieString
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.LocalPlayerConnection

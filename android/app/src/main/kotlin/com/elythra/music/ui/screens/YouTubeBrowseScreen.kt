@@ -43,10 +43,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastForEach
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.ArtistItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
+import com.elythra.innertube.models.AlbumItem
+import com.elythra.innertube.models.ArtistItem
+import com.elythra.innertube.models.PlaylistItem
+import com.elythra.innertube.models.SongItem
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.LocalPlayerConnection
 import com.elythra.music.R

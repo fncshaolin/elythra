@@ -3,17 +3,17 @@ package com.elythra.music.utils
 import android.net.ConnectivityManager
 import androidx.media3.common.PlaybackException
 import com.elythra.music.constants.AudioQuality
-import com.metrolist.innertube.NewPipeUtils
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.YouTubeClient
-import com.metrolist.innertube.models.YouTubeClient.Companion.IOS
-import com.metrolist.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
-import com.metrolist.innertube.models.YouTubeClient.Companion.WEB_REMIX
-import com.metrolist.innertube.models.response.PlayerResponse
-import com.metrolist.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
-import com.metrolist.innertube.models.YouTubeClient.Companion.MOBILE
-import com.metrolist.innertube.models.YouTubeClient.Companion.WEB
-import com.metrolist.innertube.models.YouTubeClient.Companion.WEB_CREATOR
+import com.elythra.innertube.NewPipeUtils
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.YouTubeClient
+import com.elythra.innertube.models.YouTubeClient.Companion.IOS
+import com.elythra.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
+import com.elythra.innertube.models.YouTubeClient.Companion.WEB_REMIX
+import com.elythra.innertube.models.response.PlayerResponse
+import com.elythra.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
+import com.elythra.innertube.models.YouTubeClient.Companion.MOBILE
+import com.elythra.innertube.models.YouTubeClient.Companion.WEB
+import com.elythra.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import okhttp3.OkHttpClient
 import timber.log.Timber
 
@@ -28,7 +28,7 @@ object YTPlayerUtils {
      * Do not use other clients for this because it can result in inconsistent metadata.
      * For example other clients can have different normalization targets (loudnessDb).
      *
-     * [com.metrolist.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
+     * [com.elythra.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
      * - the correct metadata (like loudnessDb)
      * - premium formats
      */

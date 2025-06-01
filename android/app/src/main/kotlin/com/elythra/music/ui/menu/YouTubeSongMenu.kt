@@ -52,8 +52,8 @@ import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.SongItem
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalDownloadUtil
 import com.elythra.music.LocalPlayerConnection

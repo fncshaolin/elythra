@@ -3,9 +3,9 @@ package com.elythra.music.viewmodels
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.filterExplicit
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.AlbumItem
+import com.elythra.innertube.models.filterExplicit
 import com.elythra.music.constants.HideExplicitKey
 import com.elythra.music.db.MusicDatabase
 import com.elythra.music.utils.dataStore

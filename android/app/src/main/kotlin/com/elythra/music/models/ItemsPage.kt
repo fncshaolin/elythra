@@ -1,6 +1,6 @@
 package com.elythra.music.models
 
-import com.metrolist.innertube.models.YTItem
+import com.elythra.innertube.models.YTItem
 
 data class ItemsPage(
     val items: List<YTItem>,

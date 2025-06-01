@@ -29,7 +29,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.navigation.NavController
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.R
 import com.elythra.music.constants.*

@@ -22,7 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.metrolist.innertube.YouTube
+import com.elythra.innertube.YouTube
 import com.elythra.music.LocalDatabase
 import com.elythra.music.R
 import com.elythra.music.db.entities.PlaylistEntity

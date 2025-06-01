@@ -110,9 +110,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import coil.imageLoader
 import coil.request.ImageRequest
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.constants.AppBarHeight
 import com.elythra.music.constants.DarkModeKey
 import com.elythra.music.constants.DefaultOpenTabKey

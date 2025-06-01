@@ -1,11 +1,11 @@
 package com.elythra.music.utils
 
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.AlbumItem
-import com.metrolist.innertube.models.ArtistItem
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.utils.completed
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.AlbumItem
+import com.elythra.innertube.models.ArtistItem
+import com.elythra.innertube.models.PlaylistItem
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.utils.completed
 import com.elythra.music.db.MusicDatabase
 import com.elythra.music.db.entities.ArtistEntity
 import com.elythra.music.db.entities.PlaylistEntity

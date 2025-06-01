@@ -1,7 +1,7 @@
 package com.elythra.music.lyrics
 
 import android.content.Context
-import com.metrolist.lrclib.LrcLib
+import com.elythra.lrclib.LrcLib
 import com.elythra.music.constants.EnableLrcLibKey
 import com.elythra.music.utils.dataStore
 import com.elythra.music.utils.get

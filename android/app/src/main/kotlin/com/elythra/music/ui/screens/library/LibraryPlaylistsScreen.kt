@@ -45,7 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.metrolist.innertube.utils.parseCookieString
+import com.elythra.innertube.utils.parseCookieString
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.R
 import com.elythra.music.constants.CONTENT_TYPE_HEADER

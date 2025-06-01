@@ -3,8 +3,8 @@ package com.elythra.music.viewmodels
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.pages.HistoryPage
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.pages.HistoryPage
 import com.elythra.music.constants.HistorySource
 import com.elythra.music.utils.reportException
 import com.elythra.music.db.MusicDatabase

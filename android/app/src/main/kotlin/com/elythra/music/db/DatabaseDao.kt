@@ -12,10 +12,10 @@ import androidx.room.Update
 import androidx.room.Upsert
 import androidx.room.RoomWarnings
 import androidx.sqlite.db.SupportSQLiteQuery
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.pages.AlbumPage
-import com.metrolist.innertube.pages.ArtistPage
+import com.elythra.innertube.models.PlaylistItem
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.pages.AlbumPage
+import com.elythra.innertube.pages.ArtistPage
 import com.elythra.music.constants.AlbumSortType
 import com.elythra.music.constants.ArtistSongSortType
 import com.elythra.music.constants.ArtistSortType

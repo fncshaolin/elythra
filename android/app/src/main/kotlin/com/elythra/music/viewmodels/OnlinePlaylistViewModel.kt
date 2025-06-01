@@ -3,10 +3,10 @@ package com.elythra.music.viewmodels
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.models.PlaylistItem
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.utils.completed
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.models.PlaylistItem
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.utils.completed
 import com.elythra.music.db.MusicDatabase
 import com.elythra.music.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel

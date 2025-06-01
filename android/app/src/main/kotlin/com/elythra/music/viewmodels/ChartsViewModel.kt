@@ -2,8 +2,8 @@ package com.elythra.music.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.metrolist.innertube.YouTube
-import com.metrolist.innertube.pages.ChartsPage
+import com.elythra.innertube.YouTube
+import com.elythra.innertube.pages.ChartsPage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

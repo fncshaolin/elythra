@@ -1,7 +1,7 @@
 package com.elythra.music.lyrics
 
 import android.content.Context
-import com.metrolist.kugou.KuGou
+import com.elythra.kugou.KuGou
 import com.elythra.music.constants.EnableKugouKey
 import com.elythra.music.utils.dataStore
 import com.elythra.music.utils.get

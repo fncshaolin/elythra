@@ -76,8 +76,8 @@ import androidx.compose.ui.util.fastAny
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.metrolist.innertube.models.SongItem
-import com.metrolist.innertube.models.WatchEndpoint
+import com.elythra.innertube.models.SongItem
+import com.elythra.innertube.models.WatchEndpoint
 import com.elythra.music.LocalDatabase
 import com.elythra.music.LocalPlayerAwareWindowInsets
 import com.elythra.music.LocalPlayerConnection

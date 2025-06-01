@@ -35,9 +35,9 @@ package com.elythra.music.ui.screens
  import com.elythra.music.ui.menu.YouTubePlaylistMenu
  import com.elythra.music.ui.utils.backToMain
  import com.elythra.music.viewmodels.BrowseViewModel
- import com.metrolist.innertube.models.AlbumItem
- import com.metrolist.innertube.models.ArtistItem
- import com.metrolist.innertube.models.PlaylistItem
+ import com.elythra.innertube.models.AlbumItem
+ import com.elythra.innertube.models.ArtistItem
+ import com.elythra.innertube.models.PlaylistItem
  
  @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
  @Composable

@@ -1,7 +1,7 @@
 package com.elythra.music.models
 
 import androidx.compose.runtime.Immutable
-import com.metrolist.innertube.models.SongItem
+import com.elythra.innertube.models.SongItem
 import com.elythra.music.db.entities.Song
 import com.elythra.music.db.entities.SongEntity
 import com.elythra.music.ui.utils.resize
