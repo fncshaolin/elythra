@@ -35,6 +35,8 @@ A cross platform music streaming app with hybrid architecture:
 ## Android v0.5 (Current Release)
 🚀 **Native Android App** - Download the latest Android APK from [GitHub Releases](https://github.com/fncshaolin/elythra/releases/latest)
 
+> **⚠️ Security Note**: Unsigned APKs may trigger false positives on some antivirus scanners. This is normal for legitimate music apps. See [SECURITY.md](SECURITY.md) for details.
+
 ## Desktop (Coming Soon)
 - **Windows**: Flutter app (v1.0.0 planned)
 - **Linux**: Flutter app (v1.0.0 planned) 
