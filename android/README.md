@@ -18,7 +18,7 @@
 src="https://github.com/fncshaolin/Elythra/blob/main/fastlane/metadata/android/en-US/images/featureGraphic.png" width="91%" />
 
 [![Latest release](https://img.shields.io/github/v/release/fncshaolin/Elythra?style=for-the-badge)](https://github.com/fncshaolin/Elythra/releases)
-[![GitHub license](https://img.shields.io/github/license/fncshaolin/metrolist?style=for-the-badge)](https://github.com/fncshaolin/Elythra/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/fncshaolin/elythra?style=for-the-badge)](https://github.com/fncshaolin/elythra/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/fncshaolin/Elythra/total?style=for-the-badge)](https://github.com/fncshaolin/Elythra/releases)
 </div>
 
@@ -53,10 +53,10 @@ src="https://github.com/fncshaolin/Elythra/blob/main/fastlane/metadata/android/e
 align="center">](https://github.com/fncshaolin/Elythra/releases/latest/download/Elythra.apk)
 
 [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80"
-align="center">](https://apt.izzysoft.de/fdroid/index/apk/com.metrolist.music)
+align="center">](https://apt.izzysoft.de/fdroid/index/apk/com.elythra.music)
 
 [<img src="https://www.openapk.net/images/openapk-badge.png" alt="Get it on OpenAPK" height="80"
-align="center">](https://www.openapk.net/metrolist/com.metrolist.music/)
+align="center">](https://www.openapk.net/elythra/com.elythra.music/)
 
 [<img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png"
 alt="Get it on Obtainium"
@@ -64,7 +64,7 @@ height="55"
 align="center">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/fncshaolin/Elythra/)
 
 [<img src="https://github.com/fncshaolin/Elythra/blob/main/fastlane/metadata/android/en-US/images/belberi_github.png" alt="Get it on Belberi" height="82"
-align="center">](https://belberi.com/metrolist/?fbclid=PAY2xjawJP5dlleHRuA2FlbQIxMAABpjSk1oBp4e8aSV4nfX2dfunQObTlMWIkN-aVA9CSq36pnmkHsvfoYTjhHg_aem_9o9OGbQuZ2PjJTArq21UDA)
+align="center">](https://belberi.com/elythra/)
 
 </div>
 

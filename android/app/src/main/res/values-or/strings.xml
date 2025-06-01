@@ -147,6 +147,5 @@
     <string name="backup_create_success">ବ୍ୟାକଅପ୍ ସଫଳତାର ସହିତ ସୃଷ୍ଟି ହେଲା</string>
     <string name="backup_create_failed">ବ୍ୟାକଅପ୍ ସୃଷ୍ଟି କରିପାରିବ ନାହିଁ</string>
     <string name="restore_failed">ବ୍ୟାକଅପ୍ ପୁନରୁଦ୍ଧାର କରିବାରେ ବିଫଳ</string>
-    <string name="about">ବିଷୟରେ</string>
     <string name="app_version">ଆପ୍ ସଂସ୍କରଣ</string>
 </resources>

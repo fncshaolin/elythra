@@ -176,7 +176,7 @@
     <string name="repeat_mode_off">Режим на повторение е изключен</string>
     <string name="repeat_mode_one">Повтори текущата песен</string>
     <string name="repeat_mode_all">Повтори опашката</string>
-    <string name="discord_information">Metrolist използва библиотеката KizzyRPC, за да зададе състоянието на профила ви в Discord. Това включва използването на връзката Discord Gateway, което може да се счита за нарушение на TOS на Discord. Въпреки това няма известни случаи на спиране на потребителски профили поради тази причина. Използвайте на свой собствен риск. \n \nMetrolist ще извлече само вашия токен, а всичко останало се съхранява локално.</string>
+    <string name="discord_information">Elythra използва библиотеката KizzyRPC, за да зададе състоянието на профила ви в Discord. Това включва използването на връзката Discord Gateway, което може да се счита за нарушение на TOS на Discord. Въпреки това няма известни случаи на спиране на потребителски профили поради тази причина. Използвайте на свой собствен риск. \n \nElythra ще извлече само вашия токен, а всичко останало се съхранява локално.</string>
     <string name="action_backup">Архивиране</string>
     <string name="translation_models">Модели за превод</string>
     <string name="clear_image_cache">Изчисти кеша на изображение</string>
@@ -213,7 +213,6 @@
     <string name="not_logged_in">Не сте влезли в</string>
     <string name="queue_all_songs">Всички песни</string>
     <string name="app_version">Версия на приложението</string>
-    <string name="about">Относно</string>
     <string name="theme">Тема</string>
     <string name="backup_restore">Архивиране и възстановяване</string>
     <string name="center">Център</string>

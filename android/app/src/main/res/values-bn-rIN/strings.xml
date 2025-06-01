@@ -218,6 +218,5 @@
     <string name="backup_create_success">ব্যাকআপ সফলভাবে তৈরি করা হয়েছে</string>
     <string name="backup_create_failed">ব্যাকআপ করতে অক্ষম</string>
     <string name="restore_failed">ব্যাকআপ থেকে পুনরুদ্ধার করতে অক্ষম</string>
-    <string name="about">সম্পর্কিত</string>
     <string name="app_version">অ্যাপ সংস্করণ</string>
 </resources>

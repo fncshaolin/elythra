@@ -234,7 +234,6 @@
     <string name="backup_create_success">ব্যাকআপ তৈরি করা হয়েছে</string>
     <string name="backup_create_failed">ব্যাকআপ করতে বার্থ</string>
     <string name="restore_failed">ব্যাকআপ থেকে রিস্টোর করতে অক্ষম</string>
-    <string name="about">অ্যাপ সম্পর্কে</string>
     <string name="app_version">অ্যাপ ভার্সন</string>
     <string name="new_version_available">নতুন ভার্সন এসেছে</string>
     <string name="translation_models">ট্রান্সলেশন মডেল</string>

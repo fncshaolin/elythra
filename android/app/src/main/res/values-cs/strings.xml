@@ -243,7 +243,6 @@
     <string name="backup_create_success">Záloha úspěšně vytvořena</string>
     <string name="backup_create_failed">Nepodařilo se vytvořit zálohu</string>
     <string name="restore_failed">Nepodařilo se obnovit zálohu</string>
-    <string name="about">O aplikaci</string>
     <string name="app_version">Verze aplikace</string>
     <string name="new_version_available">Je dostupná nová verze</string>
     <string name="translation_models">Modely překladů</string>
@@ -301,7 +300,7 @@
     <string name="default_">Výchozí</string>
     <string name="theme">Motiv</string>
     <string name="player_text_alignment">Zarovnání textu přehrávače</string>
-    <string name="discord_information">Metrolist používá knihovnu KizzyRPC, aby mohl nastavit váš stav na Discordu. Tato funkce zahrnuje připojení k bráně Discord, což může být považováno za porušení podmínek společnosti Discord. Neexistují nicméně žádné známé případy uzamčení účtu z tohoto důvodu. Používejte na vlastní nebezpečí. \n \nMetrolist pouze extrahuje váš token, vše ostatní je uloženo lokálně.</string>
+    <string name="discord_information">Elythra používá knihovnu KizzyRPC, aby mohl nastavit váš stav na Discordu. Tato funkce zahrnuje připojení k bráně Discord, což může být považováno za porušení podmínek společnosti Discord. Neexistují nicméně žádné známé případy uzamčení účtu z tohoto důvodu. Používejte na vlastní nebezpečí. \n \nElythra pouze extrahuje váš token, vše ostatní je uloženo lokálně.</string>
     <string name="enable_discord_rpc">Povolit stav na Discordu</string>
     <string name="action_logout">Odhlásit se</string>
     <string name="use_login_for_browse">Použít účet pro procházení obsahu</string>

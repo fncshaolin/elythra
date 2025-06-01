@@ -234,7 +234,6 @@
     <string name="backup_create_success">ਬੈਕਅੱਪ ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ</string>
     <string name="backup_create_failed">ਬੈਕਅੱਪ ਨਹੀਂ ਬਣਾਇਆ ਜਾ ਸਕਿਆ</string>
     <string name="restore_failed">ਬੈਕਅੱਪ ਰੀਸਟੋਰ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ</string>
-    <string name="about">ਐਪ ਦੇ ਬਾਰੇ</string>
     <string name="app_version">ਐਪ ਸੰਸਕਰਣ</string>
     <string name="new_version_available">ਨਵਾਂ ਸੰਸਕਰਣ ਉਪਲੱਬਧ ਹੈ</string>
     <string name="translation_models">ਆਨੁਵਾਦ ਦੇ ਮਾਡਲ</string>
