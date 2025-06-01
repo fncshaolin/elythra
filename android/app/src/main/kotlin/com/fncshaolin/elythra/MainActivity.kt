@@ -1,4 +1,4 @@
-package com.anandnet.harmonymusic
+package com.fncshaolin.elythra
 
 import com.ryanheise.audioservice.AudioServiceActivity
 
