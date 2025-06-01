@@ -5,6 +5,9 @@
 <!-- Translators: Do not modify this file for translations, use InnerTune's Weblate instead. -->
 
 <resources>
+    <!-- App metadata -->
+    <string name="app_description">Elythra - A modern music streaming app with YouTube Music integration</string>
+    
     <!-- Bottom navigation -->
     <string name="home">Home</string>
     <string name="songs">Songs</string>
