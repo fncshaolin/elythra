@@ -1,7 +1,7 @@
-display_name: Harmony Music
-package_name: harmonymusic
+display_name: Elythra
+package_name: elythra
 maintainer:
-  name: anandnet
+  name: fncshaolin
 priority: optional
 section: x11
 installed_size: 20000
