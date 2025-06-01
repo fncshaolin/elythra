@@ -130,11 +130,6 @@ fun SettingsScreen(
                 },
             )
         }
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.about)) },
-            icon = { Icon(painterResource(R.drawable.info), null) },
-            onClick = { navController.navigate("settings/about") }
-        )
         if (latestVersionName != BuildConfig.VERSION_NAME) {
             PreferenceEntry(
                 title = {

@@ -54,7 +54,7 @@ import com.elythra.music.ui.screens.playlist.OnlinePlaylistScreen
 import com.elythra.music.ui.screens.playlist.TopPlaylistScreen
 import com.elythra.music.ui.screens.playlist.CachePlaylistScreen
 import com.elythra.music.ui.screens.search.OnlineSearchResult
-import com.elythra.music.ui.screens.settings.AboutScreen
+
 import com.elythra.music.ui.screens.settings.AccountSettings
 import com.elythra.music.ui.screens.settings.AppearanceSettings
 import com.elythra.music.ui.screens.settings.BackupAndRestore
@@ -308,9 +308,7 @@ fun NavGraphBuilder.navigationBuilder(
     composable("settings/discord/login") {
         DiscordLoginScreen(navController)
     }
-    composable("settings/about") {
-        AboutScreen(navController, scrollBehavior)
-    }
+
     composable("login") {
         LoginScreen(navController)
     }
