@@ -57,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
                             onTap: () {
                               launchUrl(
                                 Uri.parse(
-                                  'https://github.com/anandnet/Harmony-Music/releases/latest',
+                                  'https://github.com/fncshaolin/elythra/releases/latest',
                                 ),
                                 mode: LaunchMode.externalApplication,
                               );
@@ -649,48 +649,13 @@ class SettingsScreen extends StatelessWidget {
                       },
                     ),
                   ]),
-              CustomExpansionTile(
-                icon: Icons.info,
-                title: "appInfo".tr,
-                children: [
-                  ListTile(
-                    contentPadding: const EdgeInsets.only(left: 5, right: 10),
-                    title: Text("github".tr),
-                    subtitle: Text(
-                      "${"githubDes".tr}${((Get.find<PlayerController>().playerPanelMinHeight.value) == 0 || !isBottomNavActive) ? "" : "\n\n${settingsController.currentVersion} ${"by".tr} anandnet"}",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    isThreeLine: true,
-                    onTap: () {
-                      launchUrl(
-                        Uri.parse(
-                          'https://github.com/anandnet/Harmony-Music',
-                        ),
-                        mode: LaunchMode.externalApplication,
-                      );
-                    },
-                  ),
-                  const Divider(),
-                  SizedBox(
-                    child: Column(
-                      children: [
-                        Text(
-                          "Elythra",
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Text(settingsController.currentVersion,
-                            style: Theme.of(context).textTheme.titleMedium)
-                      ],
-                    ),
-                  ),
-                ],
-              )
+
             ],
           )),
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: Text(
-              "${settingsController.currentVersion} ${"by".tr} anandnet",
+              "${settingsController.currentVersion} ${"by".tr} fncshaolin",
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
