@@ -106,9 +106,14 @@ android {
         jvmToolchain(21)
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+    
     kotlinOptions {
         jvmTarget = "21"
-        freeCompilerArgs = freeCompilerArgs + "-Xcontext-receivers"
+        freeCompilerArgs = freeCompilerArgs + "-Xcontext-parameters"
     }
 
     buildFeatures {

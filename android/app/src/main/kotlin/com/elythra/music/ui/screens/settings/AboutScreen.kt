@@ -178,7 +178,7 @@ fun AboutScreen(
     }
 
     TopAppBar(
-        title = { Text(stringResource(R.string.about)) },
+        title = { Text("About") },
         navigationIcon = {
             IconButton(
                 onClick = navController::navigateUp,
