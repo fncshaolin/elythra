@@ -151,9 +151,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
     
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-        freeCompilerArgs.add("-Xcontext-parameters")
+    kotlinOptions {
+        jvmTarget = "21"
+        freeCompilerArgs = freeCompilerArgs + "-Xcontext-parameters"
     }
 
     buildFeatures {
