@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:elythra/services/logger_service.dart';
+import '/services/logger_service.dart';
 
 import '/ui/navigator.dart';
 import '/ui/widgets/sort_widget.dart';
