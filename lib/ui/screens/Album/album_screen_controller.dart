@@ -1,16 +1,28 @@
 import 'package:audio_service/audio_service.dart' show MediaItem;
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/base_class/playlist_album_screen_con_base.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/models/album.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../../mixins/additional_opeartion_mixin.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Home/home_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 
 ///AlbumScreenController handles album screen
 ///
@@ -81,7 +93,7 @@ class AlbumScreenController extends PlaylistAlbumScreenControllerBase
       isContentFetched.value = true;
     } catch (e) {
       // Handle any errors that occur during the fetch
-      printERROR("Error fetching album details: $e");
+      LoggerService.logger.e("Error fetching album details: $e");
     }
   }
 

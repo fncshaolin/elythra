@@ -1,17 +1,29 @@
 import 'dart:async';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:app_links/app_links.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../models/playling_from.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/songinfo_bottom_sheet.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/widgets/loader.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/navigator.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class AppLinksController extends GetxController with ProcessLink {
   late AppLinks _appLinks;
@@ -61,7 +73,7 @@ mixin ProcessLink {
         uri.host == "youtu.be" ||
         uri.host == "www.youtube.com" ||
         uri.host == "m.youtube.com") {
-      printINFO(
+      LoggerService.logger.i(
           "pathsegmet: ${uri.pathSegments} params:${uri.queryParameters}");
       if (uri.pathSegments[0] == "playlist" &&
           uri.queryParameters.containsKey("list")) {

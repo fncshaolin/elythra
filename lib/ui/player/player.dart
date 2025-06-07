@@ -1,16 +1,27 @@
 import 'dart:ui';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/ui/player/components/gesture_player.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/components/standard_player.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../widgets/up_next_queue.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../widgets/sliding_up_panel.dart';
+import 'package:elythra/services/logger_service.dart';
 
 /// Player screen
 /// Contains the player ui
@@ -21,7 +32,7 @@ class Player extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    printINFO("player");
+    LoggerService.logger.i("player");
     final size = MediaQuery.of(context).size;
     final PlayerController playerController = Get.find<PlayerController>();
     final settingsScreenController = Get.find<SettingsScreenController>();

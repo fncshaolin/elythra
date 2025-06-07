@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/piped_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../screens/Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'common_dialog_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'modified_text_field.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class LinkPiped extends StatelessWidget {
   const LinkPiped({super.key});
@@ -168,7 +177,7 @@ class PipedLinkedController extends GetxController {
             password)
         .then((res) {
       if (res.code == 1) {
-        printINFO("Login Successfull");
+        LoggerService.logger.i("Login Successfull");
         Get.find<SettingsScreenController>().isLinkedWithPiped.value = true;
         Navigator.of(Get.context!).pop();
         ScaffoldMessenger.of(Get.context!).showSnackBar(

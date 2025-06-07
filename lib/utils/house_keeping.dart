@@ -1,12 +1,20 @@
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/screens/Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../services/utils.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'helper.dart';
+import 'package:elythra/services/logger_service.dart';
 
 void startHouseKeeping() {
   removeExpiredSongsUrlFromDb();
@@ -27,7 +35,7 @@ Future<void> removeExpiredSongsUrlFromDb() async {
       }
     }
   } catch (e) {
-    printERROR("Error in removeExpiredSongsUrlFromDb: $e");
+    LoggerService.logger.e("Error in removeExpiredSongsUrlFromDb: $e");
   } finally {
     removeDeletedOfflineSongsFromDb();
   }
@@ -54,6 +62,6 @@ Future<void> removeDeletedOfflineSongsFromDb() async {
       }
     }
   } catch (e) {
-    printERROR("Error in removeDeletedOfflineSongsFromDb: $e");
+    LoggerService.logger.e("Error in removeDeletedOfflineSongsFromDb: $e");
   }
 }

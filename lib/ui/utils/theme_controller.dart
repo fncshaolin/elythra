@@ -1,11 +1,19 @@
 import 'package:flutter/foundation.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/services.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:palette_generator/palette_generator.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class ThemeController extends GetxController {
   final primaryColor = Colors.deepPurple[400].obs;
@@ -72,7 +80,7 @@ class ThemeController extends GetxController {
         generator.lightVibrantColor;
     primaryColor.value = paletteColor!.color;
     textColor.value = paletteColor.bodyTextColor;
-    // printINFO(paletteColor.color.computeLuminance().toString());0.11 ref
+    // LoggerService.logger.i(paletteColor.color.computeLuminance().toString());0.11 ref
     if (paletteColor.color.computeLuminance() > 0.10) {
       primaryColor.value = paletteColor.color.withLightness(0.10);
       textColor.value = Colors.white54;
@@ -345,7 +353,7 @@ class ThemeController extends GetxController {
                 'b': color.blue,
               }));
     } on PlatformException catch (e) {
-      printERROR("Failed to set title bar color: ${e.message}");
+      LoggerService.logger.e("Failed to set title bar color: ${e.message}");
     }
   }
 }

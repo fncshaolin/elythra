@@ -1,7 +1,9 @@
 // ignore_for_file: constant_identifier_names
 
 import 'dart:math';
+import 'package:elythra/services/logger_service.dart';
 import 'nav_parser.dart';
+import 'package:elythra/services/logger_service.dart';
 
 const CONTINUATION_TOKEN = [
   "continuationItemRenderer",
@@ -62,10 +64,10 @@ Future<List<dynamic>> getContinuations(
         (reloadable
             ? getReloadableContinuationParams(results)
             : getContinuationParams(results, ctokenPath: ctokenPath));
-    //print(additionalParams);
+    //LoggerService.logger.d(additionalParams);
 
     final Map<String, dynamic> response = await requestFunc(additionalParams);
-    //print("Checking........=${response.containsKey('continuationContents')}");
+    //LoggerService.logger.d("Checking........=${response.containsKey('continuationContents')}");
     //inspect(response);
     if (response.containsKey('continuationContents')) {
       results = response['continuationContents'][continuationType];

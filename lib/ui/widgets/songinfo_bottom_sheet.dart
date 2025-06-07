@@ -1,27 +1,50 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../services/downloader.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../screens/Playlist/playlist_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/piped_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/sleep_timer_bottom_sheet.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../screens/Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/add_to_playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../navigator.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'song_download_btn.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'image_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'song_info_dialog.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class SongInfoBottomSheet extends StatelessWidget {
   const SongInfoBottomSheet(this.song,
@@ -442,7 +465,7 @@ mixin RemoveSongFromPlaylistMixin {
         // ignore: empty_catches
       } catch (e) {}
     } catch (e) {
-      printERROR("Some Error in removeSongFromPlaylist (might irrelavant): $e");
+      LoggerService.logger.e("Some Error in removeSongFromPlaylist (might irrelavant): $e");
     }
 
     if (playlist.playlistId == "SongDownloads" ||

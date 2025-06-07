@@ -1,25 +1,46 @@
 import 'dart:convert';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 import 'package:audio_service/audio_service.dart' show MediaItem;
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/models/thumbnail.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/services/permission_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/ui/widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
+import 'package:elythra/services/logger_service.dart';
 
 import '../../../base_class/playlist_album_screen_con_base.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../mixins/additional_opeartion_mixin.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../models/album.dart' show Album;
+import 'package:elythra/services/logger_service.dart';
 import '../../../models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../services/music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../services/piped_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Home/home_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 
 ///PlaylistScreenController handles playlist screen
 ///
@@ -116,7 +137,7 @@ class PlaylistScreenController extends PlaylistAlbumScreenControllerBase
       isContentFetched.value = true;
     } catch (e) {
       // Handle any errors that occur during the fetch
-      printERROR("Error fetching playlist details: $e");
+      LoggerService.logger.e("Error fetching playlist details: $e");
     }
   }
 
@@ -370,7 +391,7 @@ class PlaylistScreenController extends PlaylistAlbumScreenControllerBase
         Get.back();
       }
 
-      printERROR("Error exporting playlist: $e");
+      LoggerService.logger.e("Error exporting playlist: $e");
       
       String errorMsg = "exportError".tr;
       if (e is FileSystemException) {

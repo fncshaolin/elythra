@@ -1,7 +1,11 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:dio/dio.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class SyncedLyricsService {
   static Future<Map<String, dynamic>?> getSyncedLyrics(
@@ -18,7 +22,7 @@ class SyncedLyricsService {
     try {
       final response = (await Dio().get(url)).data;
       if (response["syncedLyrics"] != null) {
-        printINFO("Synced Available");
+        LoggerService.logger.i("Synced Available");
         final lyricsData = {
           "synced": response["syncedLyrics"],
           "plainLyrics": response["plainLyrics"]
@@ -27,7 +31,7 @@ class SyncedLyricsService {
         return lyricsData;
       }
     } on DioException catch (e) {
-      printERROR(e.response);
+      LoggerService.logger.e(e.response);
     } finally {
       await lyricsBox.close();
     }

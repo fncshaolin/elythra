@@ -1,35 +1,61 @@
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:isolate';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:math';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:flutter/services.dart';
+import 'package:elythra/services/logger_service.dart';
 
 
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:just_audio_media_kit/just_audio_media_kit.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 // ignore: depend_on_referenced_packages
 import 'package:rxdart/rxdart.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/models/album.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/equalizer.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/stream_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/hm_streaming_data.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Home/home_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/background_task.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/permission_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/utils.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 // ignore: unused_import, implementation_imports, depend_on_referenced_packages
 import "package:media_kit/src/player/platform_player.dart" show MPVLogLevel;
+import 'package:elythra/services/logger_service.dart';
 
 Future<AudioHandler> initAudioService() async {
   return await AudioService.init(
@@ -112,7 +138,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
     try {
       _player.setAudioSource(_playList);
     } catch (r) {
-      printERROR(r.toString());
+      LoggerService.logger.e(r.toString());
     }
   }
 
@@ -161,13 +187,13 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
         queueIndex: currentIndex,
       ));
 
-      //print("set ${playbackState.value.queueIndex},${event.currentIndex}");
+      //LoggerService.logger.d("set ${playbackState.value.queueIndex},${event.currentIndex}");
     }, onError: (Object e, StackTrace st) async {
       if (e is PlayerException) {
-        printERROR('Error code: ${e.code}');
-        printERROR('Error message: ${e.message}');
+        LoggerService.logger.e('Error code: ${e.code}');
+        LoggerService.logger.e('Error message: ${e.message}');
       } else {
-        printERROR('An error occurred: $e');
+        LoggerService.logger.e('An error occurred: $e');
         Duration curPos = _player.position;
         await _player.stop();
 
@@ -281,7 +307,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
     if (url.contains('/cache') ||
         (Get.find<SettingsScreenController>().cacheSongs.isTrue &&
             url.contains("http"))) {
-      printINFO("Playing Using LockCaching");
+      LoggerService.logger.i("Playing Using LockCaching");
       isPlayingUsingLockCachingSource = true;
       return LockCachingAudioSource(
         Uri.parse(url),
@@ -290,7 +316,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
       );
     }
 
-    printINFO("Playing Using AudioSource.uri");
+    LoggerService.logger.i("Playing Using AudioSource.uri");
     isPlayingUsingLockCachingSource = false;
     return AudioSource.uri(
       Uri.tryParse(url)!,
@@ -600,7 +626,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
                   streamInfo == null ? 0 : streamInfo[1]["loudnessDb"]);
             }
           } catch (e) {
-            printERROR(e);
+            LoggerService.logger.e(e);
           }
         }
         break;
@@ -705,7 +731,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
     // We use a factor to convert dB difference to a linear scale
     // 10^(difference / 20) converts dB difference to a linear volume factor
     final volumeAdjustment = pow(10.0, loudnessDifference / 20.0);
-    printINFO(
+    LoggerService.logger.i(
         "loudness:$currentLoudnessDb Normalized volume: $volumeAdjustment");
     _player.setVolume(volumeAdjustment.toDouble().clamp(0, 1.0));
   }
@@ -725,7 +751,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
       await prevSessionData.putAll(
           {"queue": queueData, "position": position, "index": currIndex});
       await prevSessionData.close();
-      printINFO("Saved session data");
+      LoggerService.logger.i("Saved session data");
     }
   }
 
@@ -775,11 +801,11 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
 // Work around used [useNewInstanceOfExplode = false] to Fix Connection closed before full header was received issue
   Future<HMStreamingData> checkNGetUrl(String songId,
       {bool generateNewUrl = false, bool offlineReplacementUrl = false}) async {
-    printINFO("Requested id : $songId");
+    LoggerService.logger.i("Requested id : $songId");
     final songDownloadsBox = Hive.box("SongDownloads");
     if (!offlineReplacementUrl &&
         (await Hive.openBox("SongsCache")).containsKey(songId)) {
-      printINFO("Got Song from cachedbox ($songId)");
+      LoggerService.logger.i("Got Song from cachedbox ($songId)");
       // if contains stream Info
       final streamInfo = Hive.box("SongsCache").get(songId)["streamInfo"];
       Audio? cacheAudioPlaceholder;
@@ -846,7 +872,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
         final streamInfoJson = songsUrlCacheBox.get(songId);
         if (streamInfoJson.runtimeType.toString().contains("Map") &&
             !isExpired(url: (streamInfoJson['lowQualityAudio']['url']))) {
-          printINFO("Got cached Url ($songId)");
+          LoggerService.logger.i("Got cached Url ($songId)");
           streamInfo = HMStreamingData.fromJson(streamInfoJson);
         }
       }

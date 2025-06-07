@@ -1,9 +1,14 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:dio/dio.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class PipedServices extends GetxService {
   final Map<String, dynamic> _headers = {};
@@ -45,10 +50,10 @@ class PipedServices extends GetxService {
         return Res(0, errorMessage: response.data['error']);
       }
 
-      printINFO("Login successful! topken : ${data['token']}");
+      LoggerService.logger.i("Login successful! topken : ${data['token']}");
       return Res(1, response: response.data);
     } on DioException catch (e) {
-      printERROR("Login Failed! => ${e.response?.statusMessage ?? e.message}");
+      LoggerService.logger.e("Login Failed! => ${e.response?.statusMessage ?? e.message}");
       return Res(0, errorMessage: e.response?.statusMessage ?? e.message);
     }
   }
@@ -88,7 +93,7 @@ class PipedServices extends GetxService {
                     ),
             );
 
-      printINFO("Successful=> $endpoint");
+      LoggerService.logger.i("Successful=> $endpoint");
 
       if (isInstanceListReq) {
         return Res(1,
@@ -104,7 +109,7 @@ class PipedServices extends GetxService {
         return Res(1, response: response.data);
       }
     } on DioException catch (e) {
-      printERROR("Error ! => ${e.response?.statusMessage ?? e.message}");
+      LoggerService.logger.e("Error ! => ${e.response?.statusMessage ?? e.message}");
       return Res(0, errorMessage: e.response?.statusMessage ?? e.message);
     }
   }

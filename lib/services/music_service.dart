@@ -1,16 +1,26 @@
 // ignore_for_file: constant_identifier_names
 
 import 'dart:convert';
+import 'package:elythra/services/logger_service.dart';
 import 'package:dio/dio.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart' as getx;
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/models/album.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/utils.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'constant.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'continuations.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'nav_parser.dart';
+import 'package:elythra/services/logger_service.dart';
 
 enum AudioQuality {
   Low,    // 128kbps
@@ -90,7 +100,7 @@ class MusicServices extends getx.GetxService {
           'id': visitorData['id'],
           'exp': DateTime.now().millisecondsSinceEpoch ~/ 1000 + 2590200
         });
-        printINFO("Got Visitor id ($visitorData['id']) from Box");
+        LoggerService.logger.i("Got Visitor id ($visitorData['id']) from Box");
         return;
       }
     }
@@ -98,7 +108,7 @@ class MusicServices extends getx.GetxService {
     final visitorId = await genrateVisitorId();
     if (visitorId != null) {
       _headers['X-Goog-Visitor-Id'] = visitorId;
-      printINFO("New Visitor id generated ($visitorId)");
+      LoggerService.logger.i("New Visitor id generated ($visitorId)");
       appPrefsBox.put("visitorId", {
         'id': visitorId,
         'exp': DateTime.now().millisecondsSinceEpoch ~/ 1000 + 2592000
@@ -133,7 +143,7 @@ class MusicServices extends getx.GetxService {
 
   Future<Response> _sendRequest(String action, Map<dynamic, dynamic> data,
       {additionalParams = ""}) async {
-    //print("$baseUrl$action$fixedParms$additionalParams          data:$data");
+    //LoggerService.logger.d("$baseUrl$action$fixedParms$additionalParams          data:$data");
     try {
       final response =
           await dio.post("$baseUrl$action$fixedParms$additionalParams",
@@ -148,7 +158,7 @@ class MusicServices extends getx.GetxService {
         return _sendRequest(action, data, additionalParams: additionalParams);
       }
     } on DioException catch (e) {
-      printINFO("Error $e");
+      LoggerService.logger.i("Error $e");
       throw NetworkError();
     }
   }
@@ -164,7 +174,7 @@ class MusicServices extends getx.GetxService {
     final sectionList =
         nav(response.data, single_column_tab + ['sectionListRenderer']);
     //inspect(sectionList);
-    //print(sectionList.containsKey('continuations'));
+    //LoggerService.logger.d(sectionList.containsKey('continuations'));
     if (sectionList.containsKey('continuations')) {
       requestFunc(additionalParams) async {
         return (await _sendRequest("browse", data,

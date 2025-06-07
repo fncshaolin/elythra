@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/lang_mapping.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../widgets/common_dialog_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/cust_switch.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/export_file_dialog.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/backup_dialog.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/restore_dialog.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/link_piped.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/utils/theme_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'components/custom_expansion_tile.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key, this.isBottomNavActive = false});
@@ -450,7 +468,7 @@ class SettingsScreen extends StatelessWidget {
                         try {
                           await Get.find<PlayerController>().openEqualizer();
                         } catch (e) {
-                          printERROR(e);
+                          LoggerService.logger.e(e);
                         }
                       },
                     ),

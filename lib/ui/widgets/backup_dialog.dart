@@ -1,19 +1,33 @@
 import 'dart:convert';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:isolate';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:archive/archive_io.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/foundation.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/loader.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../services/permission_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'common_dialog_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class BackupDialog extends StatelessWidget {
   const BackupDialog({super.key});
@@ -185,7 +199,7 @@ class BackupDialogController extends GetxController {
             "$supportDirPath/thumbnails",
             extensionFilter: ".png"));
       } catch (e) {
-        printERROR(e);
+        LoggerService.logger.e(e);
       }
     }
   }
@@ -219,7 +233,7 @@ class BackupDialogController extends GetxController {
       backupRunning.value = false;
       isbackupCompleted.value = true;
     }).catchError((e) {
-      printERROR('Error during compression: $e');
+      LoggerService.logger.e('Error during compression: $e');
     });
   }
 }
@@ -237,7 +251,7 @@ List<String> filePathsToBase64(List<String> filePaths) {
       String base64String = base64Encode(fileData);
       base64Data.add(base64String);
     } catch (e) {
-      printERROR('Error reading file $path: $e');
+      LoggerService.logger.e('Error reading file $path: $e');
     }
   }
 
@@ -255,7 +269,7 @@ List<List<int>> filePathsToFileData(List<String> filePaths) {
       List<int> fileData = file.readAsBytesSync();
       filesData.add(fileData);
     } catch (e) {
-      printERROR('Error reading file $path: $e');
+      LoggerService.logger.e('Error reading file $path: $e');
     }
   }
 
@@ -291,7 +305,7 @@ Future<void> compressFilesInBackground(
       .map((path) => path.split(GetPlatform.isWindows ? '\\' : '/').last)
       .toList();
 
-  printINFO(fileNames);
+  LoggerService.logger.i(fileNames);
   // Use compute to run the compression in the background
   await compute(_compressFiles, {
     'filesData': filesData,

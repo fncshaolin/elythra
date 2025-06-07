@@ -1,24 +1,43 @@
 import 'dart:async';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:dio/dio.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:audiotags/audiotags.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/services.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../ui/screens/Album/album_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Playlist/playlist_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/stream_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/permission_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/screens/Library/library_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 //import '../models/thumbnail.dart' as th;
 
 class Downloader extends GetxService {
@@ -157,7 +176,7 @@ class Downloader extends GetxService {
 
     final playerResponse = await StreamProvider.fetch(song.id);
     // if (!playerResponse.playable) {
-    //   printINFO("Network error! Check your network connection.");
+    //   LoggerService.logger.i("Network error! Check your network connection.");
     //   ScaffoldMessenger.of(Get.context!).showSnackBar(snackbar(
     //       Get.context!, playerResponse.statusMSG,
     //       size: SanckBarSize.BIG,
@@ -176,7 +195,7 @@ class Downloader extends GetxService {
           size: SanckBarSize.BIG,
           duration: const Duration(seconds: 2),
           top: !GetPlatform.isDesktop));
-      printINFO("Requested song is not downloadable. You may try again");
+      LoggerService.logger.i("Requested song is not downloadable. You may try again");
       complete.complete();
       return complete.future;
     }
@@ -193,7 +212,7 @@ class Downloader extends GetxService {
     final songTitle = "${song.title.trim()} (${song.artist?.trim()})"
         .replaceAll(invalidChar, "");
     String filePath = "$dirPath/$songTitle.$actualDownformat";
-    printINFO("Downloading filePath: $filePath");
+    LoggerService.logger.i("Downloading filePath: $filePath");
     final totalBytes = requiredAudioStream.size;
 
     _dio.download(
@@ -204,7 +223,7 @@ class Downloader extends GetxService {
       songDownloadingProgress.value = ((count / total) * 100).toInt();
     }).then(
       (value) async {
-        printINFO(value.data);
+        LoggerService.logger.i(value.data);
 
         String? year;
         try {
@@ -235,7 +254,7 @@ class Downloader extends GetxService {
 
         Hive.box("SongDownloads").put(song.id, songJson);
         Get.find<LibrarySongsController>().librarySongsList.add(song);
-        printINFO("Downloaded successfully");
+        LoggerService.logger.i("Downloaded successfully");
 
         final trackDetails = (song.extras?['trackDetails'])?.split("/");
         final int? trackNumber = int.tryParse(trackDetails?[0] ?? "");
@@ -265,7 +284,7 @@ class Downloader extends GetxService {
 
           await AudioTags.write(filePath, tag);
         } catch (e) {
-          printERROR("$e");
+          LoggerService.logger.e("$e");
         }
         complete.complete();
       },
@@ -276,7 +295,7 @@ class Downloader extends GetxService {
             size: SanckBarSize.BIG,
             duration: const Duration(seconds: 2),
             top: !GetPlatform.isDesktop));
-        printINFO(
+        LoggerService.logger.i(
             "Downloading failed due to network/stream error! Please try again");
         complete.complete();
       },

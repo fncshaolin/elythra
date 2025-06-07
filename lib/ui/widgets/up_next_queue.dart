@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:widget_marquee/widget_marquee.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import 'image_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'songinfo_bottom_sheet.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class UpNextQueue extends StatelessWidget {
   const UpNextQueue(
@@ -46,7 +53,7 @@ class UpNextQueue extends StatelessWidget {
           itemBuilder: (context, index) {
             final homeScaffoldContext =
                 playerController.homeScaffoldkey.currentContext!;
-            //print("${playerController.currentSongIndex.value == index} $index");
+            //LoggerService.logger.d("${playerController.currentSongIndex.value == index} $index");
             return Material(
               key: Key('$index'),
               child: Obx(

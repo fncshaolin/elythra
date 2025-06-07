@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Home/home_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/sort_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class SearchResultScreenController extends GetxController
     with GetTickerProviderStateMixin {
@@ -65,7 +72,7 @@ class SearchResultScreenController extends GetxController
             additionalParamNext[tabName]['additionalParams'] !=
                 '&ctoken=null&continuation=null') {
           if (!continuationInProgress) {
-            printINFO("Acchhsk");
+            LoggerService.logger.i("Acchhsk");
             continuationInProgress = true;
             getContinuationContents();
           }

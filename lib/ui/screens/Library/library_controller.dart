@@ -1,23 +1,42 @@
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/ui/widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:convert';
+import 'package:elythra/services/logger_service.dart';
 
 import '../../../utils/house_keeping.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../widgets/add_to_playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/sort_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/piped_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/album.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/artist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class LibrarySongsController extends GetxController {
   late RxList<MediaItem> librarySongsList = RxList();
@@ -52,7 +71,7 @@ class LibrarySongsController extends GetxController {
           })
           .whereType<String>()
           .toList());
-      //printINFO("all files: $downloadedFiles \n $songsList");
+      //LoggerService.logger.i("all files: $downloadedFiles \n $songsList");
     }
 
     final box = Hive.box("SongsCache");
@@ -569,7 +588,7 @@ class LibraryPlaylistsController extends GetxController
         Get.back();
       }
 
-      printERROR("Error importing playlist: $e");
+      LoggerService.logger.e("Error importing playlist: $e");
 
       String errorMsg = "importError".tr;
       if (e is FileSystemException) {

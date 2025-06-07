@@ -1,17 +1,29 @@
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:archive/archive_io.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:terminate_restart/terminate_restart.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../services/permission_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'common_dialog_widget.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class RestoreDialog extends StatelessWidget {
   const RestoreDialog({super.key});
@@ -158,7 +170,7 @@ class RestoreDialogController extends GetxController {
     final supportDirPath = Get.find<SettingsScreenController>().supportDirPath;
     final dbDirPath = await Get.find<SettingsScreenController>().dbDir;
     final Directory dbDir = Directory(dbDirPath);
-    printInfo(info: dbDir.path);
+    LoggerService.logger.i(info: dbDir.path);
     await Get.find<SettingsScreenController>().closeAllDatabases();
 
     //delele all the files with extension .hive
@@ -175,7 +187,7 @@ class RestoreDialogController extends GetxController {
     restoreRunning.value = true;
     for (final file in archive) {
       final filename = file.name;
-      printINFO(filename);
+      LoggerService.logger.i(filename);
       if (file.isFile) {
         final data = file.content as List<int>;
         final targetFileDir =

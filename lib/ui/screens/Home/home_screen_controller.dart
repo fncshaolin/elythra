@@ -1,18 +1,32 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:hive/hive.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/models/media_Item_builder.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../utils/update_check_flag_file.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../../../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/album.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/playlist.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/models/quick_picks.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/services/music_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/widgets/new_version_dialog.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class HomeScreenController extends GetxController {
   final MusicServices _musicServices = Get.find<MusicServices>();
@@ -78,7 +92,7 @@ class HomeScreenController extends GetxController {
               : PlaylistContent.fromJson(e))
           .toList();
       isContentFetched.value = true;
-      printINFO("Loaded from offline db");
+      LoggerService.logger.i("Loaded from offline db");
       return true;
     } else {
       return false;
@@ -136,7 +150,7 @@ class HomeScreenController extends GetxController {
             middleContentTemp.addAll(rel);
           }
         } catch (e) {
-          printERROR("Seems Based on last interaction content currently not available!");
+          LoggerService.logger.e("Seems Based on last interaction content currently not available!");
         }
       }
 
@@ -159,7 +173,7 @@ class HomeScreenController extends GetxController {
           .put("homeScreenDataTime", DateTime.now().millisecondsSinceEpoch);
       // ignore: unused_catch_stack
     } on NetworkError catch (r, e) {
-      printERROR("Home Content not loaded due to ${r.message}");
+      LoggerService.logger.e("Home Content not loaded due to ${r.message}");
       await Future.delayed(const Duration(seconds: 1));
       networkError.value = !silent;
     }
@@ -208,7 +222,7 @@ class HomeScreenController extends GetxController {
             List<MediaItem>.from(charts[index]["contents"]),
             title: charts[index]["title"]);
       } catch (e) {
-        printERROR(
+        LoggerService.logger.e(
             "Seems ${val == "TMV" ? "Top music videos" : "Trending songs"} currently not available!");
       }
     } else {
@@ -331,7 +345,7 @@ class HomeScreenController extends GetxController {
       });
     }
 
-    printINFO("Saved Homescreen data data");
+    LoggerService.logger.i("Saved Homescreen data data");
   }
 
   List<Map<String, dynamic>> _getContentDataInJson(List content,

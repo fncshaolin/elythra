@@ -1,28 +1,45 @@
 import 'dart:io';
+import 'package:elythra/services/logger_service.dart';
 import 'package:audio_service/audio_service.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/services.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/ui/screens/Home/home_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '/ui/screens/Settings/settings_screen_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/navigator.dart';
+import 'package:elythra/services/logger_service.dart';
 import '../ui/player/player.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'player/components/mini_player.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'widgets/bottom_nav_bar.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'widgets/scroll_to_hide.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'widgets/sliding_up_panel.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'widgets/snackbar.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'widgets/up_next_queue.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
   static const routeName = '/appHome';
   @override
   Widget build(BuildContext context) {
-    printINFO("Home");
+    LoggerService.logger.i("Home");
     final PlayerController playerController = Get.find<PlayerController>();
     final settingsScreenController = Get.find<SettingsScreenController>();
     final homeScreenController = Get.find<HomeScreenController>();

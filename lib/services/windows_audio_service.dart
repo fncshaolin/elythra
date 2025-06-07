@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:smtc_windows/smtc_windows.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../ui/player/player_controller.dart';
+import 'package:elythra/services/logger_service.dart';
 
 class WindowsAudioService extends GetxService {
   late SMTCWindows smtc;
@@ -41,7 +45,7 @@ class WindowsAudioService extends GetxService {
         }
       });
     } catch (e) {
-      printERROR("Error: $e");
+      LoggerService.logger.e("Error: $e");
     }
 
     playerController.buttonState.listen((state) {

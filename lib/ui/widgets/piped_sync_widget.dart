@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:elythra/utils/helper.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '../screens/Library/library_controller.dart';
 import 'snackbar.dart';
@@ -25,7 +26,7 @@ class PipedSyncWidget extends StatelessWidget {
             ), // <-- Icon
             onPressed: () async {
               try {
-                //printINFO(librplstCntrller.controller.status);
+                //LoggerService.logger.i(librplstCntrller.controller.status);
                 librplstCntrller.controller.forward();
                 librplstCntrller.controller.repeat();
                 await librplstCntrller.syncPipedPlaylist();
@@ -38,7 +39,7 @@ class PipedSyncWidget extends StatelessWidget {
                 ScaffoldMessenger.of(Get.context!).showSnackBar(snackbar(
                     Get.context!, "errorOccuredAlert".tr,
                     size: SanckBarSize.BIG));
-                printERROR(e);
+                LoggerService.logger.e('Error syncing Piped playlist: $e');
               }
             }),
       ),

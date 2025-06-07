@@ -1,11 +1,11 @@
 {
-    "name": "elythra",
-    "short_name": "elythra",
+    "name": "Elythra Music",
+    "short_name": "Elythra Music",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A powerful cross-platform music streaming application with advanced features.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

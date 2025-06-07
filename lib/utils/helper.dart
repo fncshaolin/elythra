@@ -1,23 +1,25 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:elythra/services/logger_service.dart';
 
 import '/ui/navigator.dart';
 import '/ui/widgets/sort_widget.dart';
 
 void printERROR(dynamic text, {String tag = "Elythra"}) {
-  if (kReleaseMode) return;
-  debugPrint("\x1B[31m[$tag]: $text\x1B[0m");
+  LoggerService.logger.e('[$tag]: $text');
 }
 
 void printWarning(dynamic text, {String tag = 'Elythra'}) {
-  if (kReleaseMode) return;
-  debugPrint("\x1B[33m[$tag]: $text\x1B[34m");
+  LoggerService.logger.w('[$tag]: $text');
 }
 
 void printINFO(dynamic text, {String tag = 'Elythra'}) {
-  if (kReleaseMode) return;
-  debugPrint("\x1B[32m[$tag]: $text\x1B[34m");
+  LoggerService.logger.i('[$tag]: $text');
+}
+
+void printInfo({required String info, String tag = 'Elythra'}) {
+  LoggerService.logger.i('[$tag]: $info');
 }
 
 String? getCurrentRouteName() {

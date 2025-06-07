@@ -337,7 +337,7 @@ Playlist parsePlaylist(Map<String, dynamic> data) {
 }
 
 List<dynamic> parseSongArtistsRuns(List<dynamic> runs) {
-  //print(runs);
+  //LoggerService.logger.d(runs);
   List<Map<String, dynamic>> artists = [];
   int n = (runs.length / 2).floor() + 1;
   for (var j = 0; j < n; j++) {
@@ -351,7 +351,7 @@ List<dynamic> parseSongArtistsRuns(List<dynamic> runs) {
 }
 
 MediaItem parseSongFlat(Map<String, dynamic> data) {
-  //print(data);
+  //LoggerService.logger.d(data);
   List<Map<String, dynamic>> columns = [];
   for (int i = 0; i < data['flexColumns'].length; i++) {
     columns.add(getFlexColumnItem(data, i));
@@ -522,7 +522,7 @@ List<dynamic> parsePlaylistItems(List<dynamic> results,
             if (menuService.containsKey('playlistEditEndpoint')) {
               videoId = menuService['playlistEditEndpoint']['actions'][0]
                   ['removedVideoId'];
-              // print("$videoId");
+              // LoggerService.logger.d("$videoId");
             }
           }
         }
@@ -566,7 +566,7 @@ List<dynamic> parsePlaylistItems(List<dynamic> results,
           'MUSIC_ITEM_RENDERER_DISPLAY_POLICY_GREY_OUT';
     }
 
-    //print('here');
+    //LoggerService.logger.d('here');
     dynamic song = {
       'videoId': videoId,
       'title': title,
@@ -597,7 +597,7 @@ List<dynamic> parsePlaylistItems(List<dynamic> results,
 
 Map<String, dynamic>? parseSongAlbum(Map<String, dynamic> data, int index) {
   Map<String, dynamic> flexItem = getFlexColumnItem(data, index);
-  // print("here");
+  // LoggerService.logger.d("here");
   if (flexItem.isNotEmpty) {
     return {
       'name': getItemText(data, index),

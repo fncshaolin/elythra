@@ -6,10 +6,14 @@ Licensing: More information can be found here: https://github.com/akshathjain/sl
 */
 
 import 'package:flutter/gestures.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'package:flutter/material.dart';
+import 'package:elythra/services/logger_service.dart';
 import 'dart:math';
+import 'package:elythra/services/logger_service.dart';
 
 import 'package:flutter/physics.dart';
+import 'package:elythra/services/logger_service.dart';
 
 enum SlideDirection {
   UP,
@@ -240,7 +244,7 @@ class _SlidingUpPanelState extends State<SlidingUpPanel>
         if (widget.onPanelClosed != null && _ac.value == 0.0) {
           widget.onPanelClosed!();
         }
-        //printINFO("offset :${_sc.offset}");
+        //LoggerService.logger.i("offset :${_sc.offset}");
       });
 
     // prevent the panel content from being scrolled only if the widget is
