@@ -117,6 +117,9 @@ android {
             buildConfigField("boolean", "ENABLE_VERBOSE_LOGGING", "true")
             buildConfigField("boolean", "ENABLE_PERFORMANCE_MONITORING", "true")
             buildConfigField("boolean", "ENABLE_USER_ACTION_LOGGING", "true")
+            buildConfigField("boolean", "ENABLE_CRASH_REPORTING", "true")
+            buildConfigField("boolean", "ENABLE_NETWORK_LOGGING", "true")
+            buildConfigField("String", "LOG_TAG", "\"ElythraDebugMode\"")
             signingConfig = if (System.getenv("GITHUB_EVENT_NAME") == "pull_request") {
                 signingConfigs.getByName("debug")
             } else {
