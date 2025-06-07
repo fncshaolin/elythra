@@ -24,8 +24,8 @@ import com.materialkolor.score.Score
 // Import the defined M3 Expressive Typography
 import com.elythra.music.ui.theme.AppTypography
 
-// TODO: Define M3 Expressive Shapes if needed
-// import androidx.compose.material3.Shapes
+// Using Material Design 3 default shapes for consistent UI components
+// Custom shapes can be defined here if needed for brand-specific styling
 
 val DefaultThemeColor = Color(0xFFED5564)
 
@@ -62,8 +62,7 @@ fun ElythraTheme(
         }
     }
 
-    // Use the defined M3 Expressive Typography
-    // TODO: Define M3 Expressive Shapes instance if needed
+    // Apply Material Design 3 typography and default shapes
     MaterialTheme(
         colorScheme = colorScheme,
         typography = AppTypography, // Use the defined AppTypography

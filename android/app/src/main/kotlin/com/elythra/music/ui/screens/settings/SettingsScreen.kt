@@ -146,7 +146,7 @@ fun SettingsScreen(
                     }
                 },
                 onClick = {
-                    uriHandler.openUri("https://github.com/fncshaolin/Elythra/releases/latest/download/Elythra.apk")
+                    uriHandler.openUri("https://github.com/fncshaolin/elythra/releases/latest/download/Elythra.apk")
                 }
             )
             ReleaseNotesCard()

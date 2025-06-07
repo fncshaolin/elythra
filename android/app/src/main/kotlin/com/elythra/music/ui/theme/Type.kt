@@ -6,8 +6,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// TODO: Define or import actual M3 Expressive font families if needed.
-// For now, using default FontFamily as a placeholder.
+// Using Material Design 3 default font families for consistent typography
+// FontFamily.Default provides system fonts optimized for readability
 
 // Define M3 Expressive Typography based on Material Design guidelines
 // https://m3.material.io/styles/typography/type-scale-tokens
