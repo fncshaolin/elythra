@@ -1,7 +1,7 @@
-# Elythra
+# Elythra Music
 
 [![Android Build](https://github.com/fncshaolin/elythra/actions/workflows/android_build.yml/badge.svg)](https://github.com/fncshaolin/elythra/actions/workflows/android_build.yml)
-[![Version](https://img.shields.io/badge/version-0.5-blue.svg)](https://github.com/fncshaolin/elythra/releases)
+[![Version](https://img.shields.io/badge/version-1.12.0-blue.svg)](https://github.com/fncshaolin/elythra/releases)
 
 A cross platform music streaming app with hybrid architecture:
 - **Android**: Native Android app (Kotlin/Jetpack Compose) for superior performance

@@ -18,8 +18,8 @@ android {
         applicationId = "com.elythra.music"
         minSdk = 21
         targetSdk = 36
-        versionCode = 5
-        versionName = "0.5"
+        versionCode = 25
+        versionName = "1.12.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }

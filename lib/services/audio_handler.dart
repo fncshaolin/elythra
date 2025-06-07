@@ -62,8 +62,8 @@ Future<AudioHandler> initAudioService() async {
     builder: () => MyAudioHandler(),
     config: const AudioServiceConfig(
       androidNotificationIcon: 'mipmap/ic_launcher_monochrome',
-      androidNotificationChannelId: 'com.mycompany.myapp.audio',
-      androidNotificationChannelName: 'Elythra Notification',
+      androidNotificationChannelId: 'com.elythra.music.audio',
+      androidNotificationChannelName: 'Elythra Music Notification',
       androidNotificationOngoing: true,
       androidStopForegroundOnPause: true,
     ),
@@ -95,7 +95,7 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
 
   MyAudioHandler() {
     if (GetPlatform.isWindows || GetPlatform.isLinux) {
-      JustAudioMediaKit.title = 'Elythra';
+      JustAudioMediaKit.title = 'Elythra Music';
       JustAudioMediaKit.protocolWhitelist = const ['http', 'https', 'file'];
     }
     _mediaLibrary = MediaLibrary();
