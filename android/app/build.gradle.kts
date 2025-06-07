@@ -114,11 +114,25 @@ android {
         debug {
             applicationIdSuffix = ".debug"
             isDebuggable = true
+            buildConfigField("boolean", "ENABLE_VERBOSE_LOGGING", "true")
+            buildConfigField("boolean", "ENABLE_PERFORMANCE_MONITORING", "true")
+            buildConfigField("boolean", "ENABLE_USER_ACTION_LOGGING", "true")
             signingConfig = if (System.getenv("GITHUB_EVENT_NAME") == "pull_request") {
                 signingConfigs.getByName("debug")
             } else {
                 signingConfigs.getByName("persistentDebug")
             }
+        }
+        create("testing") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".testing"
+            isDebuggable = true
+            buildConfigField("boolean", "ENABLE_VERBOSE_LOGGING", "true")
+            buildConfigField("boolean", "ENABLE_PERFORMANCE_MONITORING", "true")
+            buildConfigField("boolean", "ENABLE_USER_ACTION_LOGGING", "true")
+            buildConfigField("boolean", "ENABLE_CRASH_REPORTING", "true")
+            buildConfigField("boolean", "ENABLE_NETWORK_LOGGING", "true")
+            buildConfigField("String", "LOG_TAG", "\"ElythraTestingMode\"")
         }
     }
 

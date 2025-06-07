@@ -1,6 +1,21 @@
 # 🧪 Elythra Music - Testing Checklist
 
-Use this checklist to systematically test the app on each platform and identify bugs or areas for improvement.
+## 🚀 Quick Start Testing
+
+### **Step 1: Build Testing APK**
+```powershell
+# Run this command to build the special testing version
+.\testing_scripts\build_testing_apk.bat
+```
+
+### **Step 2: Start Testing Session**
+```powershell
+# This will install the app and start logging
+.\testing_scripts\start_testing_session.bat
+```
+
+### **Step 3: Test Systematically**
+Use this checklist and mark ✅ or ❌ for each feature:
 
 ## 📋 General Functionality Testing
 
