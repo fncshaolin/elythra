@@ -7,7 +7,7 @@ import 'package:elythra/main.dart';
 import 'package:elythra/services/logger_service.dart';
 
 void main() {
-  group('Elythra App Tests', () {
+  group('Elythra Music App Tests', () {
     setUpAll(() async {
       // Initialize test environment
       await Hive.initFlutter();
