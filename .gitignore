@@ -49,6 +49,10 @@ migrate_working_dir/
 **/linux/flutter/generated_plugin_registrant.cc
 **/linux/flutter/generated_plugins.cmake
 
+# Android Flutter-generated files (should not exist in native Android project)
+**/android/app/src/main/java/io/flutter/
+**/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
 # Symbolication related
 app.*.symbols
 
