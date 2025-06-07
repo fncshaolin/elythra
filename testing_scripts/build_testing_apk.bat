@@ -8,14 +8,21 @@ echo 🧹 Cleaning Flutter interference...
 call clean_android_flutter_files.bat
 
 echo.
-echo 📱 Building Testing APK...
+echo 📱 Building Verbose Debug APK...
 cd android
 call gradlew clean
-call gradlew assembleArm64Testing
+call gradlew assembleArm64Verbose
 
 echo.
-echo ✅ Testing APK built successfully!
-echo 📂 Location: android\app\build\outputs\apk\arm64\testing\app-arm64-testing.apk
+if exist "app\build\outputs\apk\arm64\verbose\app-arm64-verbose.apk" (
+    echo ✅ Verbose APK built successfully!
+    echo 📂 Location: android\app\build\outputs\apk\arm64\verbose\app-arm64-verbose.apk
+) else (
+    echo ❌ Build failed! APK not found.
+    echo 🔍 Check the build output above for errors.
+    pause
+    exit /b 1
+)
 echo.
 echo 🚀 Next steps:
 echo 1. Run: testing_scripts\start_testing_session.bat

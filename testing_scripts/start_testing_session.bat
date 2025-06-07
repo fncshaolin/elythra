@@ -7,11 +7,8 @@ echo ==========================================
 REM Create testing directory
 if not exist "testing_logs" mkdir testing_logs
 
-REM Get current timestamp for log files
-for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
-set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
-set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
-set "timestamp=%YYYY%-%MM%-%DD%_%HH%-%Min%-%Sec%"
+REM Get current timestamp for log files (PowerShell method for Windows 10+)
+for /f "usebackq delims=" %%i in (`powershell -command "Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'"`) do set "timestamp=%%i"
 
 echo 📱 Device Information:
 adb shell getprop ro.product.model
@@ -19,12 +16,19 @@ adb shell getprop ro.build.version.release
 adb shell getprop ro.build.version.sdk
 
 echo.
-echo 📦 Installing Testing APK...
-adb install -r android\app\build\outputs\apk\arm64\testing\app-arm64-testing.apk
+echo 📦 Installing Verbose APK...
+if exist "android\app\build\outputs\apk\arm64\verbose\app-arm64-verbose.apk" (
+    adb install -r android\app\build\outputs\apk\arm64\verbose\app-arm64-verbose.apk
+    echo ✅ APK installed successfully!
+) else (
+    echo ❌ APK not found! Please build it first with: .\testing_scripts\build_testing_apk.bat
+    pause
+    exit /b 1
+)
 
 echo.
 echo 🔧 Setting up logging...
-adb shell setprop log.tag.ElythraTestingMode VERBOSE
+adb shell setprop log.tag.ElythraVerboseMode VERBOSE
 adb shell setprop log.tag.UserAction VERBOSE
 adb shell setprop log.tag.Performance VERBOSE
 adb shell setprop log.tag.Network VERBOSE
@@ -52,5 +56,6 @@ echo.
 echo 📊 Logs will be saved to: testing_logs\session_%timestamp%.log
 echo.
 
-REM Start continuous logging
-adb logcat -s ElythraTestingMode:V UserAction:V Performance:V Network:V Audio:V UI:V AndroidRuntime:E System.err:E | tee testing_logs\session_%timestamp%.log
+REM Start continuous logging (Windows compatible)
+echo Starting logcat capture...
+adb logcat -s ElythraVerboseMode:V UserAction:V Performance:V Network:V Audio:V UI:V AndroidRuntime:E System.err:E > testing_logs\session_%timestamp%.log

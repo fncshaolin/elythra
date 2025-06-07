@@ -123,16 +123,16 @@ android {
                 signingConfigs.getByName("persistentDebug")
             }
         }
-        create("testing") {
+        create("verbose") {
             initWith(getByName("debug"))
-            applicationIdSuffix = ".testing"
+            applicationIdSuffix = ".verbose"
             isDebuggable = true
             buildConfigField("boolean", "ENABLE_VERBOSE_LOGGING", "true")
             buildConfigField("boolean", "ENABLE_PERFORMANCE_MONITORING", "true")
             buildConfigField("boolean", "ENABLE_USER_ACTION_LOGGING", "true")
             buildConfigField("boolean", "ENABLE_CRASH_REPORTING", "true")
             buildConfigField("boolean", "ENABLE_NETWORK_LOGGING", "true")
-            buildConfigField("String", "LOG_TAG", "\"ElythraTestingMode\"")
+            buildConfigField("String", "LOG_TAG", "\"ElythraVerboseMode\"")
         }
     }
 
@@ -151,9 +151,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
     
-    kotlinOptions {
-        jvmTarget = "21"
-        freeCompilerArgs = freeCompilerArgs + "-Xcontext-parameters"
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        freeCompilerArgs.add("-Xcontext-parameters")
     }
 
     buildFeatures {
