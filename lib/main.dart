@@ -10,6 +10,9 @@ import '/ui/screens/Search/search_screen_controller.dart';
 import '/utils/get_localization.dart';
 import '/services/downloader.dart';
 import '/services/piped_service.dart';
+import '/services/logger_service.dart';
+import '/services/memory_manager.dart';
+import '/services/performance_monitor.dart';
 import 'utils/app_link_controller.dart';
 import '/services/audio_handler.dart';
 import '/services/music_service.dart';
@@ -24,6 +27,15 @@ import 'utils/update_check_flag_file.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize core services
+  await LoggerService.instance.initialize();
+  logInfo('Elythra application starting', tag: 'Main');
+  
+  // Initialize memory and performance monitoring
+  Get.put(MemoryManager.instance, permanent: true);
+  Get.put(PerformanceMonitor.instance, permanent: true);
+  
   await initHive();
   _setAppInitPrefs();
   startApplicationServices();
@@ -31,6 +43,12 @@ Future<void> main() async {
   WidgetsBinding.instance.addObserver(LifecycleHandler());
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   TerminateRestart.instance.initialize();
+  
+  // Clean old logs on startup
+  await LoggerService.instance.clearOldLogs();
+  
+  logInfo('All services initialized successfully', tag: 'Main');
+  
   runApp(const MyApp());
 }
 

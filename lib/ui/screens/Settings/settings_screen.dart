@@ -345,10 +345,14 @@ class SettingsScreen extends StatelessWidget {
                         value: settingsController.streamingQuality.value,
                         items: [
                           DropdownMenuItem(
-                              value: AudioQuality.Low, child: Text("low".tr)),
+                              value: AudioQuality.Low, 
+                              child: Text(AudioQuality.Low.displayName)),
+                          DropdownMenuItem(
+                              value: AudioQuality.Medium, 
+                              child: Text(AudioQuality.Medium.displayName)),
                           DropdownMenuItem(
                             value: AudioQuality.High,
-                            child: Text("high".tr),
+                            child: Text(AudioQuality.High.displayName),
                           ),
                         ],
                         onChanged: settingsController.setStreamingQuality,

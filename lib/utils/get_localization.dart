@@ -1715,7 +1715,23 @@ Map<String, Map<String, String>> get keys => {
   "invalidPlaylistFile": "Invalid playlist file structure",
   "importErrorDatabase": "Error saving to database",
   "fileNotFound": "File not found",
-  "importLargeFileNote": "Note: Large playlists may take longer to import"
+  "importLargeFileNote": "Note: Large playlists may take longer to import",
+  "networkError": "Network connection error",
+  "timeoutError": "Request timed out",
+  "serverError": "Server error occurred",
+  "authenticationError": "Authentication failed",
+  "permissionError": "Permission denied",
+  "fileSystemError": "File system error",
+  "audioExtractionError": "Failed to extract audio",
+  "youtubeError": "YouTube service error",
+  "qualityNotAvailable": "Requested quality not available",
+  "videoNotFound": "Video not found",
+  "playbackError": "Playback error occurred",
+  "downloadError": "Download failed",
+  "cacheError": "Cache operation failed",
+  "configurationError": "Configuration error",
+  "memoryError": "Memory allocation error",
+  "unexpectedError": "An unexpected error occurred"
 }
 ,"eo" : {
     "renamePlaylist": "Alinomi Ludliston",

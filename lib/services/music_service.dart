@@ -13,8 +13,32 @@ import 'continuations.dart';
 import 'nav_parser.dart';
 
 enum AudioQuality {
-  Low,
-  High,
+  Low,    // 128kbps
+  Medium, // 256kbps  
+  High,   // 320kbps
+  
+  // Helper methods
+  String get displayName {
+    switch (this) {
+      case AudioQuality.Low:
+        return '128kbps';
+      case AudioQuality.Medium:
+        return '256kbps';
+      case AudioQuality.High:
+        return '320kbps';
+    }
+  }
+  
+  int get bitrate {
+    switch (this) {
+      case AudioQuality.Low:
+        return 128;
+      case AudioQuality.Medium:
+        return 256;
+      case AudioQuality.High:
+        return 320;
+    }
+  }
 }
 
 class MusicServices extends getx.GetxService {

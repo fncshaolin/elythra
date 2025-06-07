@@ -1,7 +1,8 @@
 //navigations
-// ignore_for_file: constant_identifier_names, empty_catches
+// ignore_for_file: constant_identifier_names
 
 import 'package:audio_service/audio_service.dart';
+import 'logger_service.dart';
 
 import '/models/media_Item_builder.dart';
 import '/services/utils.dart';
@@ -747,7 +748,9 @@ dynamic parseSearchResult(Map<String, dynamic> data,
       final list = data['flexColumns'][1]
           ['musicResponsiveListItemFlexColumnRenderer']['text']['runs'];
       searchResult['description'] = list.map((run) => run['text']).join('');
-    } catch (e) {}
+    } catch (e) {
+      logWarning('Failed to parse search result description', tag: 'NavParser', error: e);
+    }
   } else if (resultType.contains('playlist')) {
     List<dynamic> flexItem = getFlexColumnItem(data, 1)['text']['runs'];
     bool hasAuthor = (flexItem.length == defaultOffset + 3);
@@ -883,7 +886,9 @@ Map<String, dynamic> parseAlbumHeader(Map<String, dynamic> response) {
       parseSongRuns(header['subtitle']['runs'].sublist(2));
   try {
     albumInfo.addAll(parseSongRuns(header["straplineTextOne"]['runs']));
-  } catch (e) {}
+  } catch (e) {
+    logWarning('Failed to parse album strapline text', tag: 'NavParser', error: e);
+  }
   album.addAll(albumInfo);
 
   if (header['secondSubtitle']['runs'].length > 1) {

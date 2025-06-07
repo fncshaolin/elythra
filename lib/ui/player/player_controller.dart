@@ -19,6 +19,8 @@ import '../screens/Home/home_screen_controller.dart';
 import '../widgets/sliding_up_panel.dart';
 import '/models/durationstate.dart';
 import '/services/music_service.dart';
+import '/services/memory_manager.dart';
+import '/services/logger_service.dart';
 
 class PlayerController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -95,6 +97,7 @@ class PlayerController extends GetxController
   }
 
   void _init() async {
+    logInfo('Initializing PlayerController', tag: 'PlayerController');
     //_createAppDocDir();
     _listenForChangesInPlayerState();
     _listenForChangesInPosition();
@@ -160,6 +163,9 @@ class PlayerController extends GetxController
         keyboardVisibilityController.onChange.listen((bool visible) {
       visible ? playerPanelController.hide() : playerPanelController.show();
     });
+    
+    // Register subscription for automatic disposal
+    registerSubscription(keyboardSubscription, tag: 'PlayerController-Keyboard');
   }
 
   void _listenForChangesInPlayerState() {
@@ -760,6 +766,9 @@ class PlayerController extends GetxController
           timerDurationLeft.value = timerDuration - timer.tick;
         }
       });
+      
+      // Register timer for automatic disposal
+      registerTimer(sleepTimer!, tag: 'PlayerController-SleepTimer');
     }
   }
 
@@ -791,14 +800,23 @@ class PlayerController extends GetxController
 
   @override
   void dispose() {
-    _audioHandler.customAction('dispose');
-    keyboardSubscription.cancel();
-    scrollController.dispose();
-    gesturePlayerStateAnimationController?.dispose();
-    sleepTimer?.cancel();
-    if (GetPlatform.isWindows) {
-      Get.delete<WindowsAudioService>();
+    logInfo('Disposing PlayerController', tag: 'PlayerController');
+    
+    try {
+      _audioHandler.customAction('dispose');
+      keyboardSubscription.cancel();
+      scrollController.dispose();
+      gesturePlayerStateAnimationController?.dispose();
+      sleepTimer?.cancel();
+      
+      if (GetPlatform.isWindows) {
+        Get.delete<WindowsAudioService>();
+      }
+    } catch (e, stackTrace) {
+      logError('Error during PlayerController disposal', 
+               tag: 'PlayerController', error: e, stackTrace: stackTrace);
     }
+    
     super.dispose();
   }
 }
